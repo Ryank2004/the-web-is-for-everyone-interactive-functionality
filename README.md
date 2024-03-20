@@ -13,6 +13,8 @@
   * [Licentie](#licentie)
 
 ## Beschrijving
+
+User Story: Als stichting of bewoner van Amsterdam West wil ik een initiatief kunnen plaatsen op de website.
 <!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
 <!-- Voeg een mooie poster visual toe 📸 -->
 <!-- Voeg een link toe naar Github Pages 🌐-->
