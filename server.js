@@ -1,5 +1,5 @@
 
-import express from 'express'
+import express, { response } from 'express'
 import fetchJson from './helpers/fetch-json.js'
 
 
@@ -9,6 +9,8 @@ app.set('view engine', 'ejs')
 app.set('views', './views')
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
+
+const apiUrl = 'https://fdnd-agency.directus.app/items/dh_services'
 
 app.get('/', function (request, response) {
     // fetchJson("https://fdnd-agency.directus.app/admin/content/dh_services").then((apiData) => {
@@ -39,6 +41,15 @@ app.get('/initiatieven', function (request, response){
   })
   
 })
+
+app.get('/detail/:id', function (request, response){
+  fetchJson(apiUrl + '/' + request.params.id).then((initiatiefDetail) => {
+
+    response.render('detail', {initiatief: initiatiefDetail.data
+    })
+    })
+})
+
 
 
 app.set('port', process.env.PORT || 8009)
